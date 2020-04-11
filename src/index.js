@@ -13,7 +13,8 @@ class ECharts extends Component {
     canvas: PropTypes.bool,
     onLoadEnd: PropTypes.func,
     backgroundColor: PropTypes.string,
-    customTemplatePath: PropTypes.string
+    customTemplatePath: PropTypes.string,
+    androidHardwareAccelerationDisabled: PropTypes.bool
   };
 
   static defaultProps = {
@@ -168,7 +169,7 @@ class ECharts extends Component {
           allowUniversalAccessFromFileURLs
           mixedContentMode="always"
           onLoadEnd={this.onLoadEnd}
-          androidHardwareAccelerationDisabled={this.props.androidHardwareAccelerationDisabled}
+          androidHardwareAccelerationDisabled={this.props.androidHardwareAccelerationDisabled || false}
         />
       </View>
     );
